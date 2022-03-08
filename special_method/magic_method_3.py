@@ -27,3 +27,51 @@ print(pt4)
 
 l_leng2 = sqrt((pt3.x - pt4.x) ** 2 + (pt3.y - pt4.y)**2)
 print(l_leng2)
+
+
+# 네임드 튜플 선언
+Point1 = namedtuple('Point', ['x', 'y'])
+Point2 = namedtuple('Point', 'x, y')
+Point3 = namedtuple('Point', 'x y')
+Point4 = namedtuple('Point', 'x y x class', rename=True) #Default = False
+
+
+# Dict to Unpacking
+temp_dict = {'x': 75, 'y': 55}
+
+# print
+print(Point1, Point2, Point3, Point4)
+
+p1 = Point1(x=10, y=35)
+p2 = Point2(20, 40)
+p3 = Point3(45, y=20)
+p4 = Point4(10, 20, 30, 40)
+p5 = Point3(**temp_dict)
+print(p1)
+print(p2)
+print(p3)
+print(p4)
+print(p5)
+
+#usage
+print(p1[0] + p2[1])
+print(p1.x + p2.y)
+
+# unpacking
+x, y = p2
+print(x, y)
+
+# namedtuple method
+temp = [52, 38]
+# _make(): new object generation
+p4 = Point1._make(temp)
+print(p4)
+
+# _field: fieid name ghkrdls
+print(p1._fields, p2._fields, p3._fields)
+
+# _asdict() : OrderDict return ***
+print(p1._asdict())
+
+
+# 
