@@ -10,6 +10,7 @@ pt1 = (1.0, 5.0)
 pt2 = (2.5, 1.5)
 
 from math import sqrt
+from msilib.schema import Class
 
 l_leng1 = sqrt((pt1[0] - pt2[0]) ** 2 + (pt1[1] - pt2[1])**2)
 print(l_leng1)
@@ -71,4 +72,36 @@ print(p4)
 print(p1._fields, p2._fields, p3._fields)
 
 # _asdict() : OrderDict return ***
+<<<<<<< HEAD
 print(p1._asdict())
+=======
+print(p1._asdict())
+
+
+# 실사용 실습
+# 반 20명, 4개의 반(A, B, C, D)
+Classes = namedtuple('Classes', ['rank', 'number'])
+
+# 그룹 리스트 선언
+numbers = [str(n) for n in range(1, 21)]
+ranks = 'A B C D'.split()
+
+print(numbers)
+print(ranks)
+
+# list Comprehention
+students = [Classes(rank, number) for rank in ranks for number in numbers]
+print(len(students))
+print(students)
+
+# 추천 
+students2 = [Classes(rank, number) 
+            for rank in "A B C D".split() 
+            for number in [str(n) for n in range(1, 21)]]
+
+print(students2)
+
+# 출력 
+for s in students2:
+    print(s)
+>>>>>>> 59e001f1e45ca674fa67186acbbe2b69b2dff186
