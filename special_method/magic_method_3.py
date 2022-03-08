@@ -72,6 +72,3 @@ print(p1._fields, p2._fields, p3._fields)
 
 # _asdict() : OrderDict return ***
 print(p1._asdict())
-
-
-# 
